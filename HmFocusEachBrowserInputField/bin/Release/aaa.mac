@@ -1,0 +1,20 @@
+﻿jsmode "WebView2\\" + currentmacrodirectory;
+
+js {
+    debuginfo(2);
+    var command = currentmacrodirectory() + "\\HmFocusEachBrowserInputField.exe " + hidemaru.getCurrentWindowHandle();
+    console.log(command);
+    
+    var processInfo = hidemaru.runProcess(command, ".", "stdio", "utf8");
+    
+    var stdOut = processInfo.stdOut;
+      stdOut.onReadAll( readAllAsync ); //固まりません
+
+      function readAllAsync(out) {
+    debuginfo(2);
+        //ここはマクロ実行中ではない
+        console.log(out);
+      }
+
+	// 1+1は？
+}

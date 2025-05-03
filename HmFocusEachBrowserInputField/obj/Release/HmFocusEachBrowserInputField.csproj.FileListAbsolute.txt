@@ -1,0 +1,7 @@
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\bin\Release\HmFocusEachBrowserInputField.exe.config
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\bin\Release\HmFocusEachBrowserInputField.exe
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\bin\Release\HmFocusEachBrowserInputField.pdb
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\obj\Release\HmFocusEachBrowserInputField.csproj.AssemblyReference.cache
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\obj\Release\HmFocusEachBrowserInputField.csproj.CoreCompileInputs.cache
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\obj\Release\HmFocusEachBrowserInputField.exe
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\obj\Release\HmFocusEachBrowserInputField.pdb

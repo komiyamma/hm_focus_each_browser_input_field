@@ -1,0 +1,4 @@
+js {
+    hidemaru.runProcesss(currentmacrodirectory() + "\\FocusInputFieldOfEachBrowser.exe " + hidemaru.getCurretnWindowHandle(), ".", "stdio", "utf8");
+
+}

@@ -1,0 +1,2 @@
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\obj\Debug\FocusInputFieldOfEachBrowser.csproj.AssemblyReference.cache
+C:\Users\master\source\repos\FocusInputFieldOfEachBrowser\FocusInputFieldOfEachBrowser\obj\Debug\FocusInputFieldOfEachBrowser.csproj.CoreCompileInputs.cache
