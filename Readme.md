@@ -33,28 +33,12 @@ HmFocusEachBrowserInputField.exe <hidemaru_window_handle> <dummy_arg> [temp_file
 
 ### 秀丸マクロの例
 
-```c
-// 秀丸のメインウィンドウハンドルを取得
-#h = hidemaruhandle(0);
+```javascript
 
-// 実行可能ファイルのパス
-$exe_path = "C:\\path\\to\\HmFocusEachBrowserInputField.exe";
+const eachBrowserWindowHandle = 0; // 今はJavaScript側からは取得できない。
+const command = `"${currentMacroDirectory}\\HmFocusEachBrowserInputField.exe" ${hidemaru.getCurrentWindowHandle()} ${eachBrowserWindowHandle} "${tempFileFullPath}"`;
+processInfoFocus = hidemaru.runProcess(command, ".", "stdio", "utf8");
 
-// 一時ファイルのパス (オプション)
-$temp_file = "C:\\path\\to\\temp.txt";
-// ファイルに挿入したいテキストを書き込む
-loaddata "挿入したいテキスト", file, $temp_file;
-
-
-// コマンドを実行 (一時ファイルあり)
-// 第2引数はダミーなので 0 を渡す
-runex(strf("\"%s\" %d 0 \"%s\"", $exe_path, #h, $temp_file), 0, 0);
-
-// コマンドを実行 (一時ファイルなし、フォーカスのみ)
-// runex(strf("\"%s\" %d 0", $exe_path, #h), 0, 0);
-
-
-endmacro;
 ```
 
 ## 動作の仕組み
