@@ -5,11 +5,18 @@ public partial class HmFocusEachBrowserInputField
 {
     public static int Main(string[] args)
     {
+
         // 第1引数がウィンドウハンドルの値  
         if (args.Length == 0)
         {
             Console.Error.WriteLine("0");
             return 0;
+        }
+
+        String tempFilePath = "";
+        if (args.Length >= 3)
+        {
+            tempFilePath = args[2];
         }
 
         IntPtr hWndHidemaruHandle = IntPtr.Zero;
@@ -23,7 +30,8 @@ public partial class HmFocusEachBrowserInputField
             // ウィンドウハンドルを取得  
             if (WebView2Handle != IntPtr.Zero)
             {
-                bool focus = FocusInputField(WebView2Handle);
+                Console.WriteLine("WebView2Handle: " + WebView2Handle.ToString("X"));
+                bool focus = FocusInputField(WebView2Handle, (IntPtr)0, tempFilePath);
                 if (focus)
                 {
                     Console.WriteLine("1");

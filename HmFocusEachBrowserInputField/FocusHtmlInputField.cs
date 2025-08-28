@@ -6,7 +6,7 @@ namespace HmFocusEachBrowserInputField;
 public partial class HmFocusEachBrowserInputField
 {
 
-    public static bool FocusInputField(IntPtr eachBrowserWindowHandle)
+    public static bool FocusInputField(IntPtr eachBrowserWindowHandle, IntPtr dummy, String tempFilePath)
     {
         var appWindow = AutomationElement.FromHandle(eachBrowserWindowHandle);
 
@@ -37,15 +37,41 @@ public partial class HmFocusEachBrowserInputField
             {
                 inputField.SetFocus();
 
+                if (String.IsNullOrEmpty(tempFilePath))
+                {
+                    Console.Error.WriteLine("1");
+                    return true;
+                }
                 // inputフィールドに文字列を入れる
                 var valuePattern = (ValuePattern)inputField.GetCurrentPattern(ValuePattern.Pattern);
                 if (valuePattern != null)
                 {
-                    // valuePattern.SetValue("test");
+                    try
+                    {
+                        // ファイルの読み込み
+                        string text = System.IO.File.ReadAllText(tempFilePath);
+                        valuePattern.SetValue(text);
+
+                        // ファイルの書き込み
+                        System.IO.File.WriteAllText(tempFilePath, "HmConvAiWeb.Complete(2);\n");
+
+                        inputField.SetFocus();
+                        Console.Error.WriteLine("2");
+                        return true;
+                    }
+                    catch (Exception) { }
+
+                    try
+                    {
+                        System.IO.File.WriteAllText(tempFilePath, "HmConvAiWeb.Complete(1);\n");
+                        Console.Error.WriteLine("1");
+                        return true;
+                    }
+                    catch (Exception) {
+                    }
 
                     return true;
                 }
-
             }
             catch (ElementNotEnabledException errInput)
             {
